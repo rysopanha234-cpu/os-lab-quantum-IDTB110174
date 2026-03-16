@@ -1,0 +1,7 @@
+Run 1: 72
+Run 2: 78
+Run 3: 80
+Run 4: 76
+Run 5: 82
+Explanation:
+The inventory number changes after each run because multiple bot processes access inventory.txt at the same time. Each process reads the inventory before others finish writing the updated value, creating a race condition (TOC-TOU vulnerability). The operating system scheduler decides which process runs first, so the final result is different each time.
